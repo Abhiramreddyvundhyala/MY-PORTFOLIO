@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbhiRam Reddy Vundhyala | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4a6cf7',
+                        secondary: '#2a3855',
+                        accent: '#3a57d5',
+                        light: '#f4f7fa',
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .scroll-smooth { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="font-sans bg-light text-gray-800 scroll-smooth">
+    <!-- Header -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-md shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-secondary">
+                    AbhiRam<span class="text-primary">Reddy</span>
+                </div>
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#home" class="text-secondary hover:text-primary transition duration-300">Home</a></li>
+                    <li><a href="#about" class="text-secondary hover:text-primary transition duration-300">About</a></li>
+                    <li><a href="#experience" class="text-secondary hover:text-primary transition duration-300">Experience</a></li>
+                    <li><a href="#projects" class="text-secondary hover:text-primary transition duration-300">Projects</a></li>
+                    <li><a href="#skills" class="text-secondary hover:text-primary transition duration-300">Skills</a></li>
+                    <li><a href="#achievements" class="text-secondary hover:text-primary transition duration-300">Achievements</a></li>
+                    <li><a href="#contact" class="text-secondary hover:text-primary transition duration-300">Contact</a></li>
+                </ul>
+                <button class="md:hidden text-secondary hover:text-primary transition duration-300">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 bg-gradient-to-br from-white via-blue-50 to-indigo-100">
+        <div class="container mx-auto px-6 py-20">
+            <div class="max-w-4xl animate-fade-in">
+                <div class="mb-6">
+                    <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
+                        <i class="fas fa-code mr-2"></i>Full-Stack Developer & AI Enthusiast
+                    </span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold text-secondary mb-6 leading-tight">
+                    Hi, I'm <span class="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AbhiRam Reddy</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl">
+                    Computer Science Engineering student at <span class="text-primary font-semibold">NMIMS Hyderabad</span>, passionate about building innovative solutions with AI, Web Development, and Mobile Applications.
+                </p>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <a href="#projects" class="bg-primary hover:bg-accent text-white px-8 py-4 rounded-lg font-semibold transition transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+                        <i class="fas fa-laptop-code mr-2"></i>View My Work
+                    </a>
+                    <a href="#contact" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-lg font-semibold transition transform hover:-translate-y-1">
+                        <i class="fas fa-envelope mr-2"></i>Contact Me
+                    </a>
+                    <a href="abhiramreddy_vundhyala__resume.pdf" target="_blank" class="bg-secondary hover:bg-gray-700 text-white px-8 py-4 rounded-lg font-semibold transition transform hover:-translate-y-1">
+                        <i class="fas fa-download mr-2"></i>Download Resume
+                    </a>
+                </div>
+                <div class="flex items-center space-x-6 text-gray-600">
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                        <span>Hyderabad, India</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-phone text-primary mr-2"></i>
+                        <span>+91 7780720178</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope text-primary mr-2"></i>
+                        <span>abhiabhiramreddy32@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-secondary mb-4">About Me</h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-12"></div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <img src="ME.jpeg" alt="AbhiRam Reddy Vundhyala" class="rounded-2xl shadow-2xl w-full max-w-md mx-auto hover:scale-105 transition duration-500">
+                        <div class="absolute -bottom-6 -right-6 bg-primary text-white p-4 rounded-full shadow-lg">
+                            <i class="fas fa-graduation-cap text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h3 class="text-3xl font-bold text-secondary mb-6">Computer Science Engineering Student & Developer</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        I'm currently pursuing my <strong class="text-primary">Bachelor of Technology in Computer Science and Engineering</strong> at <strong class="text-primary">SVKM's Narsee Monjee Institute of Management Studies, Hyderabad</strong> (Sep 2022 - Present).
+                    </p>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        My passion lies in developing scalable software solutions that solve real-world problems. I have hands-on experience in full-stack web development, mobile app development, machine learning, and data analytics.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Currently working as a Software Developer Intern at Mahabubnagar District Administration, where I'm building digital survey systems to improve government operations and data management.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-light p-4 rounded-lg">
+                            <div class="text-2xl font-bold text-primary">8+</div>
+                            <div class="text-sm text-gray-600">Projects Completed</div>
+                        </div>
+                        <div class="bg-light p-4 rounded-lg">
+                            <div class="text-2xl font-bold text-primary">10+</div>
+                            <div class="text-sm text-gray-600">Technologies Mastered</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-primary hover:bg-accent text-white px-6 py-3 rounded-lg font-semibold transition transform hover:-translate-y-1 shadow-lg">
+                            <i class="fas fa-handshake mr-2"></i>Let's Collaborate
+                        </a>
+                        <a href="#experience" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-semibold transition transform hover:-translate-y-1">
+                            <i class="fas fa-briefcase mr-2"></i>My Experience
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-light">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-secondary mb-4">Experience</h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-12"></div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-gradient-to-br from-primary to-accent p-4 rounded-full mr-6 shadow-lg">
+                                <i class="fas fa-laptop-code text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-secondary">Software Developer Intern</h3>
+                                <p class="text-primary font-semibold text-lg">Mahabubnagar District Administration</p>
+                                <p class="text-gray-500 flex items-center">
+                                    <i class="fas fa-calendar-alt mr-2"></i>Feb 2025 - Present | 
+                                    <i class="fas fa-map-marker-alt ml-2 mr-2"></i>Mahabubnagar, Telangana, India
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="text-lg font-semibold text-secondary mb-3">Hostel Survey Application Project</h4>
+                            <ul class="list-disc pl-5 space-y-3 text-gray-600">
+                                <li>Developed a <strong>scalable digital survey system</strong> commissioned by the Additional District Collector using <strong>Java, Android, and web technologies</strong> (HTML, Tailwind CSS, JS) to monitor food quality and hygiene across <strong>100+ hostels</strong>.</li>
+                                <li>Collaborated with a <strong>4-member cross-functional team</strong> to build a high-performance mobile app and web portal, enabling real-time inspections for <strong>13 mandals</strong>.</li>
+                                <li>Implemented <strong>clean, modular code using OOP principles</strong> for seamless data integration and optimal performance.</li>
+                                <li>Followed <strong>agile methodologies</strong> throughout the SDLC to deliver timely product iterations. Continuing deployment after completing development, with rigorous testing for system reliability.</li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">Java</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">Android Studio</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">HTML/CSS</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">JavaScript</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">Tailwind CSS</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">Firebase</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">Agile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-secondary mb-4">My Projects</h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-12"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- YouTube Engagement Rate Prediction -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition duration-300 border border-gray-100">
+                    <div class="h-48 bg-gradient-to-r from-red-400 to-pink-500 flex items-center justify-center">
+                        <i class="fab fa-youtube text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-secondary">YouTube Engagement Rate Prediction</h3>
+                            <span class="text-sm text-gray-500">Oct 2024</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Predictive analytics system utilizing YouTube API, ML algorithms (Linear Regression, Decision Trees, Random Forests, K-Means), and NLP techniques for engagement optimization.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Machine Learning</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">NLP</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">YouTube API</span>
+                        </div>
+                        <a href="#" class="text-primary font-semibold hover:underline flex items-center">
+                            View Project <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RO Water Plant Management System -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition duration-300 border border-gray-100">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
+                        <i class="fas fa-tint text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-secondary">RO Water Plant Management System</h3>
+                            <span class="text-sm text-gray-500">Jan 2025</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Native Android app to streamline logistics and financial oversight for RO water plants with interactive dashboards and real-time tracking.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Java</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Android Studio</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Firebase</span>
+                        </div>
+                        <a href="#" class="text-primary font-semibold hover:underline flex items-center">
+                            View Project <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Enterprise Management System -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition duration-300 border border-gray-100">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-indigo-500 flex items-center justify-center">
+                        <i class="fas fa-building text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-secondary">Enterprise Management System</h3>
+                            <span class="text-sm text-gray-500">Apr 2024</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Full-stack web application to automate key operations and centralize business intelligence with Firebase real-time database integration.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">HTML/CSS</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Firebase</span>
+                        </div>
+                        <a href="#" class="text-primary font-semibold hover:underline flex items-center">
+                            View Project <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sentiment Analysis on Philippines Wikipedia -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition duration-300 border border-gray-100">
+                    <div class="h-48 bg-gradient-to-r from-teal-400 to-cyan-500 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">Sentiment Analysis on Philippines Wikipedia Content</h3>
+                        <p class="text-gray-600 mb-4">Advanced NLP project analyzing sentiment patterns in Philippines-related Wikipedia articles using machine learning techniques.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">NLP</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Sentiment Analysis</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Wikipedia API</span>
+                        </div>
+                        <a href="#" class="text-primary font-semibold hover:underline flex items-center">
+                            View Project <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- NYC Green Taxi Trip Data Analysis -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition duration-300 border border-gray-100">
+                    <div class="h-48 bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center">
+                        <i class="fas fa-taxi text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">NYC Green Taxi Trip Data Analysis</h3>
+                        <p class="text-gray-600 mb-4">Comprehensive analysis of March 2020 NYC Green Taxi trip data to uncover transportation patterns and insights using data visualization.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Pandas</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Data Visualization</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Analytics</span>
+                        </div>
+                        <a href="#" class="text-primary font-semibold hover:underline flex items-center">
+                            View Project <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Home Foods Ordering Platform -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition duration-300 border border-gray-100">
+                    <div class="h-48 bg-gradient-to-r from-orange-400 to-red-500 flex items-center justify-center">
+                        <i class="fas fa-utensils text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">Home Foods Ordering Platform</h3>
+                        <p class="text-gray-600 mb-4">Full-stack web platform connecting home cooks with customers, featuring order management, payment integration, and user reviews.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">HTML/CSS</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Database</span>
+                        </div>
+                        <a href="#" class="text-primary font-semibold hover:underline flex items-center">
+                            View Project <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- AI Chatbot -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition duration-300 border border-gray-100">
+                    <div class="h-48 bg-gradient-to-r from-pink-400 to-red-500 flex items-center justify-center">
+                        <i class="fas fa-robot text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">AI Chatbot using Python</h3>
+                        <p class="text-gray-600 mb-4">Intelligent conversational AI chatbot built with Python, implementing natural language processing and machine learning algorithms.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">NLP</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Machine Learning</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">AI</span>
+                        </div>
+                        <a href="#" class="text-primary font-semibold hover:underline flex items-center">
+                            View Project <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SJF Scheduling Simulator -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition duration-300 border border-gray-100">
+                    <div class="h-48 bg-gradient-to-r from-indigo-400 to-purple-500 flex items-center justify-center">
+                        <i class="fas fa-cogs text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">SJF Non-Preemptive Scheduling Simulator</h3>
+                        <p class="text-gray-600 mb-4">Operating systems project implementing Shortest Job First scheduling algorithm with visualization and performance metrics.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">C++</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Operating Systems</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Algorithms</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Simulation</span>
+                        </div>
+                        <a href="#" class="text-primary font-semibold hover:underline flex items-center">
+                            View Project <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Chit Fund Management System -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition duration-300 border border-gray-100">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-green-400 flex items-center justify-center">
+                        <i class="fas fa-users text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-secondary">Chit Fund Management System</h3>
+                            <span class="text-sm text-gray-500">2024</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Web application for collaborative study and efficient chit management. Features real-time tracking, automated notifications, and interactive reports using Firebase.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">HTML</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">CSS</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Firebase</span>
+                        </div>
+                        <a href="#" class="text-primary font-semibold hover:underline flex items-center">
+                            View Project <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Collaborative Study Platform -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:-translate-y-2 transition duration-300 border border-gray-100">
+                    <div class="h-48 bg-gradient-to-r from-indigo-400 to-blue-400 flex items-center justify-center">
+                        <i class="fas fa-users-cog text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-secondary">Collaborative Study Platform</h3>
+                            <span class="text-sm text-gray-500">2024</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">It is a smart educational companion that empowers students with AI-driven tools for collaborative learning, personalized study plans, and academic support. Simulates a real study group with voice/video chat, AI tutors, and resource sharing—all in one seamless platform.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">AI</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">WebRTC</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-blue-100 text-primary text-xs font-semibold px-3 py-1 rounded-full">Firebase</span>
+                        </div>
+                        <a href="#" class="text-primary font-semibold hover:underline flex items-center">
+                            View Project <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-light">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-secondary mb-4">Technical Skills</h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-12"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Programming Languages -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                            <i class="fas fa-code text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary">Programming Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">C++</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Python</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Java</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">JavaScript</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">HTML/CSS</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">R</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">C</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Node.js</span>
+                    </div>
+                </div>
+                
+                <!-- Frameworks & Libraries -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                            <i class="fas fa-layer-group text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary">Frameworks & Libraries</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">React.js</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">NumPy</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Pandas</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Matplotlib</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Seaborn</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">scikit-learn</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">TensorFlow/Keras</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Flask</span>
+                    </div>
+                </div>
+                
+                <!-- Databases & Tools -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                            <i class="fas fa-database text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary">Databases & Developer Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">MySQL</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">MongoDB</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Firebase</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">phpMyAdmin</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">VS Code</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Anaconda</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Power BI</span>
+                    </div>
+                </div>
+                
+                <!-- Mobile Development -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                            <i class="fas fa-mobile-alt text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary">Mobile Development</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Android Studio</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Java</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Firebase</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Flutter</span>
+                    </div>
+                </div>
+                
+                <!-- Cloud & Other Technologies -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                            <i class="fas fa-cloud text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary">Cloud & Other Technologies</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">AWS</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Google Cloud</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Git/GitHub</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">OpenCV</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Microsoft Excel</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Canva</span>
+                    </div>
+                </div>
+                
+                <!-- AI/ML & Data Science -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                            <i class="fas fa-brain text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary">AI/ML & Data Science</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Machine Learning</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Deep Learning</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">NLP</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Data Analysis</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Data Visualization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Leadership Section -->
+    <section id="achievements" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-secondary mb-4">Leadership & Achievements</h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-12"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Leadership -->
+                <div>
+                    <h3 class="text-2xl font-bold text-secondary mb-6 flex items-center">
+                        <i class="fas fa-trophy text-primary mr-3"></i>Leadership
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-light p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                            <div class="flex items-start">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-music text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-secondary text-lg">Event Planning & Execution</h4>
+                                    <p class="text-gray-600">Led event planning and execution for the Live Band performance at NM Tech Festa, coordinating logistics and ensuring successful delivery.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Achievements -->
+                <div>
+                    <h3 class="text-2xl font-bold text-secondary mb-6 flex items-center">
+                        <i class="fas fa-medal text-primary mr-3"></i>Achievements
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-light p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                            <div class="flex items-start">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-award text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-secondary text-lg">CodeIT Webathon Runner-up</h4>
+                                    <p class="text-gray-600">Secured 2nd Place (Runner-up) in the CodeIT Webathon competition, demonstrating strong web development and problem-solving skills.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-light p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                            <div class="flex items-start">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-globe text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-secondary text-lg">Global & National Competitions</h4>
+                                    <p class="text-gray-600">Competed in prestigious global and national-level events including the IBM Z Datathon and Apoorv CTF Hackathon.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section class="py-20 bg-light">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Education -->
+                <div>
+                    <h2 class="text-3xl font-bold text-secondary mb-4 flex items-center">
+                        <i class="fas fa-graduation-cap text-primary mr-3"></i>Education
+                    </h2>
+                    <div class="w-20 h-1 bg-primary mb-8"></div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-xl">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-gradient-to-br from-primary to-accent p-4 rounded-full mr-6 shadow-lg">
+                                <i class="fas fa-university text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary">Bachelor of Technology</h3>
+                                <p class="text-lg text-primary font-semibold">Computer Science and Engineering</p>
+                                <p class="text-primary font-semibold">SVKM's Narsee Monjee Institute of Management Studies</p>
+                                <p class="text-gray-500 flex items-center">
+                                    <i class="fas fa-calendar-alt mr-2"></i>Sep 2022 - Present | 
+                                    <i class="fas fa-map-marker-alt ml-2 mr-2"></i>Hyderabad, Telangana, India
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-4">Currently in 3rd year, focusing on advanced computer science concepts, software engineering principles, and emerging technologies.</p>
+                    </div>
+                </div>
+                
+                <!-- Certifications -->
+                <div>
+                    <h2 class="text-3xl font-bold text-secondary mb-4 flex items-center">
+                        <i class="fas fa-certificate text-primary mr-3"></i>Certifications
+                    </h2>
+                    <div class="w-20 h-1 bg-primary mb-8"></div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                            <div class="flex items-center">
+                                <i class="fab fa-aws text-orange-500 text-xl mr-3"></i>
+                                <div>
+                                    <h3 class="font-bold text-secondary">AWS Cloud Foundations</h3>
+                                    <p class="text-sm text-gray-600">Amazon Web Services</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                            <div class="flex items-center">
+                                <i class="fab fa-google text-blue-500 text-xl mr-3"></i>
+                                <div>
+                                    <h3 class="font-bold text-secondary">Google Cloud Foundations</h3>
+                                    <p class="text-sm text-gray-600">Google</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                            <div class="flex items-center">
+                                <i class="fas fa-robot text-blue-600 text-xl mr-3"></i>
+                                <div>
+                                    <h3 class="font-bold text-secondary">Machine Learning with Python</h3>
+                                    <p class="text-sm text-gray-600">IBM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                            <div class="flex items-center">
+                                <i class="fas fa-chart-bar text-green-600 text-xl mr-3"></i>
+                                <div>
+                                    <h3 class="font-bold text-secondary">Introduction to Data Science</h3>
+                                    <p class="text-sm text-gray-600">Cisco</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                            <div class="flex items-center">
+                                <i class="fab fa-python text-yellow-600 text-xl mr-3"></i>
+                                <div>
+                                    <h3 class="font-bold text-secondary">Python Programming</h3>
+                                    <p class="text-sm text-gray-600">Various Platforms</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                            <div class="flex items-center">
+                                <i class="fas fa-chart-line text-purple-600 text-xl mr-3"></i>
+                                <div>
+                                    <h3 class="font-bold text-secondary">Data Visualization with Python</h3>
+                                    <p class="text-sm text-gray-600">Kaggle</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                            <div class="flex items-center">
+                                <i class="fab fa-microsoft text-blue-700 text-xl mr-3"></i>
+                                <div>
+                                    <h3 class="font-bold text-secondary">Career Essentials in Data Analysis</h3>
+                                    <p class="text-sm text-gray-600">Microsoft & LinkedIn</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-secondary mb-4">Get In Touch</h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-12"></div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-secondary mb-4">Let's Collaborate</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        I'm always interested in hearing about new projects and opportunities. Whether you're looking for a developer, have questions about my work, or just want to connect, feel free to reach out!
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start hover:text-primary transition duration-300">
+                            <i class="fas fa-envelope text-primary mt-1 mr-4"></i>
+                            <a href="mailto:abhiabhiramreddy32@gmail.com">abhiabhiramreddy32@gmail.com</a>
+                        </li>
+                        <li class="flex items-start hover:text-primary transition duration-300">
+                            <i class="fas fa-phone text-primary mt-1 mr-4"></i>
+                            <a href="tel:+917780720178">+91 7780720178</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-4"></i>
+                            <span>Hyderabad, Telangana, India</span>
+                        </li>
+                    </ul>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/abhiramreddyvundhyala/" target="_blank" rel="noopener" class="bg-secondary hover:bg-primary text-white p-3 rounded-full transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Abhiramreddyvundhyala" target="_blank" rel="noopener" class="bg-secondary hover:bg-primary text-white p-3 rounded-full transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="bg-secondary hover:bg-primary text-white p-3 rounded-full transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-secondary hover:bg-primary text-white p-3 rounded-full transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <form class="bg-light p-8 rounded-2xl shadow-xl">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-semibold mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-semibold mb-2">Your Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300">
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-semibold mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">Your Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300 resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="bg-primary hover:bg-accent text-white px-8 py-4 rounded-lg font-semibold transition transform hover:-translate-y-1 shadow-lg hover:shadow-xl w-full">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.linkedin.com/in/abhiramreddyvundhyala/" target="_blank" rel="noopener" class="hover:text-primary transition duration-300 transform hover:scale-110">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="https://github.com/Abhiramreddyvundhyala" target="_blank" rel="noopener" class="hover:text-primary transition duration-300 transform hover:scale-110">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="#" class="hover:text-primary transition duration-300 transform hover:scale-110">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+                <a href="#" class="hover:text-primary transition duration-300 transform hover:scale-110">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+            </div>
+            <p class="mb-4 text-lg">© 2025 AbhiRam Reddy Vundhyala. All rights reserved.</p>
+            <p class="text-sm text-gray-400">Designed and built with ❤️ by AbhiRam Reddy</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-white z-50 hidden flex-col items-center justify-center">
+        <button id="closeMenu" class="absolute top-6 right-6 text-2xl text-secondary hover:text-primary transition duration-300">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="space-y-8 text-center">
+            <li><a href="#home" class="text-2xl font-semibold text-secondary hover:text-primary transition duration-300">Home</a></li>
+            <li><a href="#about" class="text-2xl font-semibold text-secondary hover:text-primary transition duration-300">About</a></li>
+            <li><a href="#experience" class="text-2xl font-semibold text-secondary hover:text-primary transition duration-300">Experience</a></li>
+            <li><a href="#projects" class="text-2xl font-semibold text-secondary hover:text-primary transition duration-300">Projects</a></li>
+            <li><a href="#skills" class="text-2xl font-semibold text-secondary hover:text-primary transition duration-300">Skills</a></li>
+            <li><a href="#achievements" class="text-2xl font-semibold text-secondary hover:text-primary transition duration-300">Achievements</a></li>
+            <li><a href="#contact" class="text-2xl font-semibold text-secondary hover:text-primary transition duration-300">Contact</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuBtn = document.querySelector('header button');
+        const closeBtn = document.getElementById('closeMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                    }
+                }
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-white/95');
+            } else {
+                header.classList.remove('bg-white/95');
+            }
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
