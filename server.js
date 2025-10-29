@@ -164,9 +164,11 @@ app.post('/api/contact', async (req, res) => {
 
     } catch (error) {
         console.error('Error:', error);
+        console.error('Error details:', error.message);
         res.status(500).json({
             success: false,
-            message: 'Failed to send message. Please try again later.'
+            message: 'Failed to send message. Please try again later.',
+            error: process.env.NODE_ENV === 'development' ? error.message : undefined
         });
     }
 });
@@ -194,8 +196,28 @@ app.get('/api/health', (req, res) => {
     res.status(200).json({
         success: true,
         message: 'Server is running',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        email: process.env.EMAIL_USER ? 'configured' : 'not configured',
+        mongodb: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
     });
+});
+
+// Test email endpoint
+app.get('/api/test-email', async (req, res) => {
+    try {
+        await transporter.verify();
+        res.status(200).json({
+            success: true,
+            message: 'Email service is working',
+            configured: process.env.EMAIL_USER
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Email service error',
+            error: error.message
+        });
+    }
 });
 
 const PORT = process.env.PORT || 3000;
