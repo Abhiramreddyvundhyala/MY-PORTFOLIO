@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Backend server for AbhiRam Reddy's portfolio with MongoDB and email integration",
   "main": "server.js",
-  "engines": {
-    "node": ">=14.x"
-  },
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"

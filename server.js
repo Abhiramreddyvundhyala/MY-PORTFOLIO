@@ -6,17 +6,8 @@ require('dotenv').config();
 
 const app = express();
 
-// CORS Middleware - Allow all origins
-app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true
-}));
-
-// Handle preflight requests
-app.options('*', cors());
-
+// Middleware
+app.use(cors());
 app.use(express.json());
 app.use(express.static('.')); // Serve static files from current directory
 
@@ -63,20 +54,6 @@ const transporter = nodemailer.createTransport({
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD
     }
-});
-
-// Root route
-app.get('/', (req, res) => {
-    res.json({
-        success: true,
-        message: 'Portfolio Backend API',
-        version: '1.0.0',
-        endpoints: {
-            health: '/api/health',
-            contact: 'POST /api/contact',
-            contacts: 'GET /api/contacts'
-        }
-    });
 });
 
 // Contact Form Endpoint
@@ -214,12 +191,7 @@ app.get('/api/health', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-
-// Start server
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
     console.log(`🚀 Server is running on port ${PORT}`);
     console.log(`📧 Email configured with: ${process.env.EMAIL_USER}`);
 });
-
-// Export for serverless environments (if needed)
-module.exports = app;

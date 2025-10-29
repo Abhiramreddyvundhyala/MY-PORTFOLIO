@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Connection Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-3xl font-bold text-center mb-8 text-blue-600">
+            <i class="fas fa-flask mr-2"></i>Backend Connection Tester
+        </h1>
+        
+        <!-- Health Check -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4 flex items-center">
+                <i class="fas fa-heartbeat text-green-500 mr-2"></i>Server Health Check
+            </h2>
+            <button onclick="testHealth()" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition">
+                <i class="fas fa-check-circle mr-2"></i>Test Connection
+            </button>
+            <div id="healthResult" class="mt-4"></div>
+        </div>
+
+        <!-- Test Contact Form -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4 flex items-center">
+                <i class="fas fa-envelope text-blue-500 mr-2"></i>Test Contact Form
+            </h2>
+            <form id="testForm" class="space-y-4">
+                <div>
+                    <label class="block font-semibold mb-2">Name</label>
+                    <input type="text" id="testName" value="Test User" class="w-full border rounded-lg px-4 py-2" required>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-2">Email</label>
+                    <input type="email" id="testEmail" value="test@example.com" class="w-full border rounded-lg px-4 py-2" required>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-2">Subject</label>
+                    <input type="text" id="testSubject" value="Test Message" class="w-full border rounded-lg px-4 py-2" required>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-2">Message</label>
+                    <textarea id="testMessage" rows="3" class="w-full border rounded-lg px-4 py-2" required>This is a test message to verify the backend is working correctly.</textarea>
+                </div>
+                <button type="submit" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition">
+                    <i class="fas fa-paper-plane mr-2"></i>Send Test Message
+                </button>
+            </form>
+            <div id="formResult" class="mt-4"></div>
+        </div>
+
+        <!-- View Contacts -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-bold mb-4 flex items-center">
+                <i class="fas fa-database text-purple-500 mr-2"></i>View Saved Contacts
+            </h2>
+            <button onclick="getContacts()" class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold transition">
+                <i class="fas fa-list mr-2"></i>Fetch All Contacts
+            </button>
+            <div id="contactsResult" class="mt-4"></div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 mt-6 rounded-lg">
+            <h3 class="font-bold text-yellow-800 mb-2">
+                <i class="fas fa-info-circle mr-2"></i>Before Testing
+            </h3>
+            <ul class="text-yellow-800 space-y-2">
+                <li><i class="fas fa-check mr-2"></i>Make sure MongoDB is running</li>
+                <li><i class="fas fa-check mr-2"></i>Configure .env file with your credentials</li>
+                <li><i class="fas fa-check mr-2"></i>Run: <code class="bg-yellow-200 px-2 py-1 rounded">npm start</code></li>
+                <li><i class="fas fa-check mr-2"></i>Server should be running on port 3000</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:3000/api';
+
+        async function testHealth() {
+            const resultDiv = document.getElementById('healthResult');
+            resultDiv.innerHTML = '<p class="text-blue-600"><i class="fas fa-spinner fa-spin mr-2"></i>Testing...</p>';
+            
+            try {
+                const response = await fetch(`${API_URL}/health`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    resultDiv.innerHTML = `
+                        <div class="bg-green-100 border border-green-300 text-green-800 p-4 rounded-lg">
+                            <i class="fas fa-check-circle mr-2"></i><strong>Success!</strong> Server is running.
+                            <div class="mt-2 text-sm">Timestamp: ${data.timestamp}</div>
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="bg-red-100 border border-red-300 text-red-800 p-4 rounded-lg">
+                            <i class="fas fa-times-circle mr-2"></i>Server responded but with an error.
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="bg-red-100 border border-red-300 text-red-800 p-4 rounded-lg">
+                        <i class="fas fa-exclamation-triangle mr-2"></i><strong>Error!</strong> Cannot connect to server.
+                        <div class="mt-2 text-sm">Make sure the server is running: <code>npm start</code></div>
+                    </div>
+                `;
+            }
+        }
+
+        document.getElementById('testForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const resultDiv = document.getElementById('formResult');
+            resultDiv.innerHTML = '<p class="text-blue-600"><i class="fas fa-spinner fa-spin mr-2"></i>Sending...</p>';
+            
+            const formData = {
+                name: document.getElementById('testName').value,
+                email: document.getElementById('testEmail').value,
+                subject: document.getElementById('testSubject').value,
+                message: document.getElementById('testMessage').value
+            };
+            
+            try {
+                const response = await fetch(`${API_URL}/contact`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    resultDiv.innerHTML = `
+                        <div class="bg-green-100 border border-green-300 text-green-800 p-4 rounded-lg">
+                            <i class="fas fa-check-circle mr-2"></i><strong>Success!</strong> ${data.message}
+                            <div class="mt-2 text-sm">
+                                ✅ Message saved to MongoDB<br>
+                                ✅ Email sent to you<br>
+                                ✅ Auto-reply sent to user
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="bg-red-100 border border-red-300 text-red-800 p-4 rounded-lg">
+                            <i class="fas fa-times-circle mr-2"></i><strong>Error:</strong> ${data.message}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="bg-red-100 border border-red-300 text-red-800 p-4 rounded-lg">
+                        <i class="fas fa-exclamation-triangle mr-2"></i><strong>Network Error!</strong> ${error.message}
+                    </div>
+                `;
+            }
+        });
+
+        async function getContacts() {
+            const resultDiv = document.getElementById('contactsResult');
+            resultDiv.innerHTML = '<p class="text-blue-600"><i class="fas fa-spinner fa-spin mr-2"></i>Loading...</p>';
+            
+            try {
+                const response = await fetch(`${API_URL}/contacts`);
+                const data = await response.json();
+                
+                if (data.success && data.data.length > 0) {
+                    let html = `
+                        <div class="bg-green-100 border border-green-300 p-4 rounded-lg mb-4">
+                            <i class="fas fa-check-circle mr-2"></i><strong>${data.count} contact(s) found</strong>
+                        </div>
+                        <div class="space-y-4 max-h-96 overflow-y-auto">
+                    `;
+                    
+                    data.data.forEach(contact => {
+                        html += `
+                            <div class="border border-gray-300 p-4 rounded-lg bg-white">
+                                <div class="font-bold text-lg">${contact.name}</div>
+                                <div class="text-sm text-gray-600">${contact.email}</div>
+                                <div class="text-sm font-semibold text-blue-600 mt-2">${contact.subject}</div>
+                                <div class="text-sm text-gray-700 mt-2">${contact.message}</div>
+                                <div class="text-xs text-gray-500 mt-2">
+                                    <i class="far fa-clock mr-1"></i>${new Date(contact.createdAt).toLocaleString()}
+                                </div>
+                            </div>
+                        `;
+                    });
+                    
+                    html += '</div>';
+                    resultDiv.innerHTML = html;
+                } else if (data.success && data.data.length === 0) {
+                    resultDiv.innerHTML = `
+                        <div class="bg-yellow-100 border border-yellow-300 text-yellow-800 p-4 rounded-lg">
+                            <i class="fas fa-info-circle mr-2"></i>No contacts found yet. Submit a test message first!
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="bg-red-100 border border-red-300 text-red-800 p-4 rounded-lg">
+                            <i class="fas fa-times-circle mr-2"></i>Error fetching contacts
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="bg-red-100 border border-red-300 text-red-800 p-4 rounded-lg">
+                        <i class="fas fa-exclamation-triangle mr-2"></i><strong>Network Error!</strong> ${error.message}
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
